@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "cooking",
+  "version": "0.0.1",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Advanced Cooking",
+  "description": "An advanced cooking mod.",
   "authors": [
-    "Me!"
+    "Awty Game Making Club"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/Awty-Game-Making-Club/minecraft-cooking",
+    "sources": "https://github.com/Awty-Game-Making-Club/minecraft-cooking"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/cooking/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "org.awty.gmc.minecraft.cooking.CookingMod"
     ]
   },
   "mixins": [
@@ -33,5 +33,7 @@
   },
   "suggests": {
     "flamingo": "*"
-  }
+  },
+
+  "accessWidener" : "cooking.accesswidener"
 }

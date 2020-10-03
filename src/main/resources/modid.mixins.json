@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "org.awty.gmc.minecraft.cooking.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],

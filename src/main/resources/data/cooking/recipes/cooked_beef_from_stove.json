@@ -1,0 +1,16 @@
+{
+  "type": "cooking:stove_cooking",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:beef"
+    }
+  },
+  "result": {
+    "item": "minecraft:cooked_beef",
+    "count": 4
+  }
+}
