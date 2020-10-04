@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "cooking:block/toaster_front",
+    "north": "cooking:block/toaster_front",
+    "south": "cooking:block/toaster_front",
+    "east": "cooking:block/toaster_side",
+    "west": "cooking:block/toaster_side",
+    "up": "cooking:block/toaster_top",
+    "down": "minecraft:block/iron_block"
+  }
+}

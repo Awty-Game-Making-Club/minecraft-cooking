@@ -30,9 +30,9 @@ public class CookingScreenHandler extends AbstractRecipeScreenHandler<Inventory>
     private final Block block;
     private final RecipeType<? extends AbstractShapedCookingRecipe> recipeType;
 
-    public CookingScreenHandler(Block block, RecipeType<? extends AbstractShapedCookingRecipe> recipeType, int syncId, PlayerInventory playerInventory) {
-        this(block, recipeType, syncId, playerInventory, ScreenHandlerContext.EMPTY);
-    }
+//    public CookingScreenHandler(Block block, RecipeType<? extends AbstractShapedCookingRecipe> recipeType, int syncId, PlayerInventory playerInventory) {
+//        this(block, recipeType, syncId, playerInventory, ScreenHandlerContext.EMPTY);
+//    }
 
     public CookingScreenHandler(Block block, RecipeType<? extends AbstractShapedCookingRecipe> recipeType, int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
         super(ScreenHandlerType.CRAFTING, syncId);
@@ -185,6 +185,6 @@ public class CookingScreenHandler extends AbstractRecipeScreenHandler<Inventory>
 
     @Environment(EnvType.CLIENT)
     public RecipeBookCategory getCategory() {
-        return RecipeBookCategory.SMOKER;
+        return RecipeBookCategory.CRAFTING;
     }
 }

@@ -114,6 +114,27 @@ public class CookingMod implements ModInitializer {
 		public static Item ONION;
 		public static Item BEAN;
 
+		public static Item FLOUR;
+
+		public static Item CHEESE;
+		public static Item BUTTER;
+		public static Item BURGER;
+		public static Item CHEESEBURGER;
+		public static Item FRIED_CHICKEN;
+		public static Item CHICKEN_SANDWICH;
+		public static Item PIZZA;
+		public static Item TORTILLA;
+		public static Item QUESADILLA;
+		public static Item COOKED_RICE;
+		public static Item FRIED_RICE;
+		public static Item GRILLED_CHEESE;
+		public static Item TOAST;
+		public static Item FRIES;
+		public static Item FRIED_FISH;
+		public static Item FISH_AND_CHIPS;
+		public static Item SHAWARMA;
+		public static Item ONION_RINGS;
+
 		private static void registerAll() {
 			STOVE = registerItemFromBlock("stove", Blocks.STOVE);
 			MILK_BARREL = registerItemFromBlock("milk_barrel", Blocks.MILK_BARREL);
@@ -123,10 +144,31 @@ public class CookingMod implements ModInitializer {
 			MILL = registerItemFromBlock("mill", Blocks.MILL);
 			FRYER = registerItemFromBlock("fryer", Blocks.FRYER);
 
-			TOMATO = registerCropItem("tomato", Blocks.TOMATOES, new FoodComponent.Builder().hunger(1).saturationModifier(0.3f).build());
-			RICE = registerCropItem("rice", Blocks.RICE, new FoodComponent.Builder().hunger(1).saturationModifier(0.3f).build());
-			ONION = registerCropItem("onion", Blocks.ONIONS,  new FoodComponent.Builder().hunger(1).saturationModifier(0.3f).build());
-			BEAN = registerCropItem("bean", Blocks.BEANS, new FoodComponent.Builder().hunger(1).saturationModifier(0.3f).build());
+			TOMATO = registerCropItem("tomato", Blocks.TOMATOES, 	new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build());
+			RICE = registerCropItem("rice", Blocks.RICE, 			new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build());
+			ONION = registerCropItem("onion", Blocks.ONIONS,		new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build());
+			BEAN = registerCropItem("bean", Blocks.BEANS,			new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build());
+
+			FLOUR = registerCookingItem("flour");
+
+			CHEESE = registerFoodItem("cheese", 					new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).build());
+			BUTTER = registerFoodItem("butter", 					new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).build());
+			BURGER = registerFoodItem("burger", 					new FoodComponent.Builder().hunger(10).saturationModifier(1.0f).meat().build());
+			CHEESEBURGER = registerFoodItem("cheeseburger", 		new FoodComponent.Builder().hunger(10).saturationModifier(1.0f).meat().build());
+			FRIED_CHICKEN = registerFoodItem("fried_chicken", 		new FoodComponent.Builder().hunger(8).saturationModifier(0.8f).meat().build());
+			CHICKEN_SANDWICH = registerFoodItem("chicken_sandwich",	new FoodComponent.Builder().hunger(10).saturationModifier(1.0f).meat().build());
+			PIZZA = registerFoodItem("pizza", 						new FoodComponent.Builder().hunger(10).saturationModifier(1.0f).meat().build());
+			TORTILLA = registerFoodItem("tortilla", 				new FoodComponent.Builder().hunger(4).saturationModifier(0.3f).build());
+			QUESADILLA = registerFoodItem("quesadilla", 			new FoodComponent.Builder().hunger(10).saturationModifier(0.8f).build());
+			COOKED_RICE = registerFoodItem("cooked_rice", 			new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).build());
+			FRIED_RICE = registerFoodItem("fried_rice", 			new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build());
+			GRILLED_CHEESE = registerFoodItem("grilled_cheese", 	new FoodComponent.Builder().hunger(10).saturationModifier(1.0f).build());
+			TOAST = registerFoodItem("toast", 						new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).build());
+			FRIES = registerFoodItem("fries", 						new FoodComponent.Builder().hunger(4).saturationModifier(0.6f).build());
+			FRIED_FISH = registerFoodItem("fried_fish", 			new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build());
+			FISH_AND_CHIPS = registerFoodItem("fish_and_chips",		new FoodComponent.Builder().hunger(10).saturationModifier(1.0f).meat().build());
+			SHAWARMA = registerFoodItem("shawarma", 				new FoodComponent.Builder().hunger(10).saturationModifier(1.0f).meat().build());
+			ONION_RINGS = registerFoodItem("onion_rings", 			new FoodComponent.Builder().hunger(6).saturationModifier(0.8f).build());
 		}
 
 		private static Item registerFoodItem(String fileName, FoodComponent foodComponent) {
@@ -138,11 +180,11 @@ public class CookingMod implements ModInitializer {
 		}
 
 		private static Item registerCookingItem(String fileName) {
-			return Registry.register(Registry.ITEM, new Identifier(NAMESPACE, fileName), new Item(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+			return Registry.register(Registry.ITEM, new Identifier(NAMESPACE, fileName), new Item(new FabricItemSettings().group(ItemGroup.FOOD)));
 		}
 
 		private static Item registerItemFromBlock(String fileName, Block block) {
-			return Registry.register(Registry.ITEM, new Identifier(NAMESPACE, fileName), new BlockItem(block, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+			return Registry.register(Registry.ITEM, new Identifier(NAMESPACE, fileName), new BlockItem(block, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
 		}
 	}
 

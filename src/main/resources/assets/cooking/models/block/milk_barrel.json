@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "cooking:block/milk_barrel_side",
+    "north": "cooking:block/milk_barrel_side",
+    "south": "cooking:block/milk_barrel_side",
+    "east": "cooking:block/milk_barrel_side",
+    "west": "cooking:block/milk_barrel_side",
+    "up": "cooking:block/milk_barrel_top",
+    "down": "cooking:block/milk_barrel_top"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "cooking:block/grill_side",
+    "north": "cooking:block/grill_side",
+    "south": "cooking:block/grill_side",
+    "east": "cooking:block/grill_side",
+    "west": "cooking:block/grill_side",
+    "up": "cooking:block/grill_top",
+    "down": "minecraft:block/iron_block"
+  }
+}

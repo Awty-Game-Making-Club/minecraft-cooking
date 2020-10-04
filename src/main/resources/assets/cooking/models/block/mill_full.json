@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "cooking:block/mill_front",
+    "north": "cooking:block/mill_front",
+    "south": "cooking:block/mill_side",
+    "east": "cooking:block/mill_side",
+    "west": "cooking:block/mill_side",
+    "up": "cooking:block/mill_top_full",
+    "down": "minecraft:block/oak_planks"
+  }
+}
