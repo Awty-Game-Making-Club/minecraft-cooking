@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import org.awty.gmc.minecraft.cooking.CookingMod;
 
-public class MilkBarrelCookingRecipe extends AbstractShapedCookingRecipe {
+public class MilkBarrelCookingRecipe extends AbstractCookingRecipe {
     public MilkBarrelCookingRecipe(Identifier id, String group, int width, int height, DefaultedList<Ingredient> ingredients, ItemStack output) {
         super(id, group, width, height, ingredients, output);
     }

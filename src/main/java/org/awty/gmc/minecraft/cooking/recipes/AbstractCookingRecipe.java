@@ -8,15 +8,15 @@ import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 
-public abstract class AbstractShapedCookingRecipe extends ShapedRecipe {
-    public AbstractShapedCookingRecipe(Identifier id, String group, int width, int height, DefaultedList<Ingredient> ingredients, ItemStack output) {
+public abstract class AbstractCookingRecipe extends ShapedRecipe {
+    public AbstractCookingRecipe(Identifier id, String group, int width, int height, DefaultedList<Ingredient> ingredients, ItemStack output) {
         super(id, group, width, height, ingredients, output);
     }
 
     public static class Serializer extends ShapedRecipe.Serializer {
         @FunctionalInterface
         public interface RecipeConstructor {
-            AbstractShapedCookingRecipe apply(Identifier id, String group, int width, int height, DefaultedList<Ingredient> ingredients, ItemStack output);
+            AbstractCookingRecipe apply(Identifier id, String group, int width, int height, DefaultedList<Ingredient> ingredients, ItemStack output);
         }
 
         private final RecipeConstructor recipeConstructor;
@@ -26,7 +26,7 @@ public abstract class AbstractShapedCookingRecipe extends ShapedRecipe {
         }
 
         @Override
-        public AbstractShapedCookingRecipe read(Identifier identifier, JsonObject jsonObject) {
+        public AbstractCookingRecipe read(Identifier identifier, JsonObject jsonObject) {
             ShapedRecipe shapedRecipe = super.read(identifier, jsonObject);
             return recipeConstructor.apply(shapedRecipe.getId(),
                     shapedRecipe.getGroup(),
@@ -37,7 +37,7 @@ public abstract class AbstractShapedCookingRecipe extends ShapedRecipe {
         }
 
         @Override
-        public AbstractShapedCookingRecipe read(Identifier identifier, PacketByteBuf packetByteBuf) {
+        public AbstractCookingRecipe read(Identifier identifier, PacketByteBuf packetByteBuf) {
             ShapedRecipe shapedRecipe = super.read(identifier, packetByteBuf);
             return recipeConstructor.apply(shapedRecipe.getId(),
                     shapedRecipe.getGroup(),

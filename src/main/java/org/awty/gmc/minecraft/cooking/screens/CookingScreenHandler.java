@@ -10,14 +10,18 @@ import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.packet.s2c.play.ScreenHandlerSlotUpdateS2CPacket;
-import net.minecraft.recipe.*;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeFinder;
+import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.RecipeBookCategory;
-import net.minecraft.screen.*;
+import net.minecraft.screen.AbstractRecipeScreenHandler;
+import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.CraftingResultSlot;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
-import org.awty.gmc.minecraft.cooking.recipes.AbstractShapedCookingRecipe;
+import org.awty.gmc.minecraft.cooking.recipes.AbstractCookingRecipe;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -28,13 +32,13 @@ public class CookingScreenHandler extends AbstractRecipeScreenHandler<Inventory>
     private final ScreenHandlerContext context;
     private final PlayerEntity player;
     private final Block block;
-    private final RecipeType<? extends AbstractShapedCookingRecipe> recipeType;
+    private final RecipeType<? extends AbstractCookingRecipe> recipeType;
 
-//    public CookingScreenHandler(Block block, RecipeType<? extends AbstractShapedCookingRecipe> recipeType, int syncId, PlayerInventory playerInventory) {
+//    public CookingScreenHandler(Block block, RecipeType<? extends AbstractCookingRecipe> recipeType, int syncId, PlayerInventory playerInventory) {
 //        this(block, recipeType, syncId, playerInventory, ScreenHandlerContext.EMPTY);
 //    }
 
-    public CookingScreenHandler(Block block, RecipeType<? extends AbstractShapedCookingRecipe> recipeType, int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
+    public CookingScreenHandler(Block block, RecipeType<? extends AbstractCookingRecipe> recipeType, int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
         super(ScreenHandlerType.CRAFTING, syncId);
 
         this.block = block;
@@ -71,9 +75,9 @@ public class CookingScreenHandler extends AbstractRecipeScreenHandler<Inventory>
         if (!world.isClient) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)player;
             ItemStack itemStack = ItemStack.EMPTY;
-            Optional<? extends AbstractShapedCookingRecipe> optional = Objects.requireNonNull(world.getServer()).getRecipeManager().getFirstMatch(recipeType, craftingInventory, world);
+            Optional<? extends AbstractCookingRecipe> optional = Objects.requireNonNull(world.getServer()).getRecipeManager().getFirstMatch(recipeType, craftingInventory, world);
             if (optional.isPresent()) {
-                AbstractShapedCookingRecipe craftingRecipe = optional.get();
+                AbstractCookingRecipe craftingRecipe = optional.get();
                 if (resultInventory.shouldCraftRecipe(world, serverPlayerEntity, craftingRecipe)) {
                     itemStack = craftingRecipe.craft(craftingInventory);
                 }

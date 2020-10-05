@@ -4,15 +4,15 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import org.awty.gmc.minecraft.cooking.CookingMod;
-import org.awty.gmc.minecraft.cooking.recipes.AbstractShapedCookingRecipe;
+import org.awty.gmc.minecraft.cooking.recipes.AbstractCookingRecipe;
 
-public class GrillBlock extends CookingBlock {
+public class GrillBlock extends AbstractCookingBlock {
     public GrillBlock(Settings settings) {
         super(settings);
     }
 
     @Override
-    RecipeType<? extends AbstractShapedCookingRecipe> getRecipeType() {
+    public RecipeType<? extends AbstractCookingRecipe> getRecipeType() {
         return CookingMod.RecipeTypes.GRILLING;
     }
 

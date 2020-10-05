@@ -2,6 +2,7 @@ package org.awty.gmc.minecraft.cooking;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.AbstractBlock.Settings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -9,12 +10,14 @@ import net.minecraft.item.*;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.awty.gmc.minecraft.cooking.blocks.craftingstations.*;
 import org.awty.gmc.minecraft.cooking.blocks.crops.*;
 import org.awty.gmc.minecraft.cooking.recipes.*;
+import org.awty.gmc.minecraft.cooking.screens.*;
 
 public class CookingMod implements ModInitializer {
 	
@@ -217,22 +220,22 @@ public class CookingMod implements ModInitializer {
 	}
 
 	public static class RecipeSerializers {
-		public static AbstractShapedCookingRecipe.Serializer STOVE_COOKING;
-		public static AbstractShapedCookingRecipe.Serializer MILK_BARREL_COOKING;
-		public static AbstractShapedCookingRecipe.Serializer GRILLING;
-		public static AbstractShapedCookingRecipe.Serializer BAKING;
-		public static AbstractShapedCookingRecipe.Serializer TOASTING;
-		public static AbstractShapedCookingRecipe.Serializer MILLING;
-		public static AbstractShapedCookingRecipe.Serializer FRYING;
+		public static AbstractCookingRecipe.Serializer STOVE_COOKING;
+		public static AbstractCookingRecipe.Serializer MILK_BARREL_COOKING;
+		public static AbstractCookingRecipe.Serializer GRILLING;
+		public static AbstractCookingRecipe.Serializer BAKING;
+		public static AbstractCookingRecipe.Serializer TOASTING;
+		public static AbstractCookingRecipe.Serializer MILLING;
+		public static AbstractCookingRecipe.Serializer FRYING;
 
 		private static void registerAll() {
-			STOVE_COOKING = register("stove_cooking", new AbstractShapedCookingRecipe.Serializer(StoveCookingRecipe::new));
-			MILK_BARREL_COOKING = register("milk_barrel_cooking", new AbstractShapedCookingRecipe.Serializer(StoveCookingRecipe::new));
-			GRILLING = register("grilling", new AbstractShapedCookingRecipe.Serializer(StoveCookingRecipe::new));
-			BAKING = register("baking", new AbstractShapedCookingRecipe.Serializer(StoveCookingRecipe::new));
-			TOASTING = register("toasting", new AbstractShapedCookingRecipe.Serializer(StoveCookingRecipe::new));
-			MILLING = register("milling", new AbstractShapedCookingRecipe.Serializer(StoveCookingRecipe::new));
-			FRYING = register("frying", new AbstractShapedCookingRecipe.Serializer(StoveCookingRecipe::new));
+			STOVE_COOKING = register("stove_cooking", new AbstractCookingRecipe.Serializer(StoveCookingRecipe::new));
+			MILK_BARREL_COOKING = register("milk_barrel_cooking", new AbstractCookingRecipe.Serializer(MilkBarrelCookingRecipe::new));
+			GRILLING = register("grilling", new AbstractCookingRecipe.Serializer(GrillingRecipe::new));
+			BAKING = register("baking", new AbstractCookingRecipe.Serializer(BakingRecipe::new));
+			TOASTING = register("toasting", new AbstractCookingRecipe.Serializer(ToastingRecipe::new));
+			MILLING = register("milling", new AbstractCookingRecipe.Serializer(MillingRecipe::new));
+			FRYING = register("frying", new AbstractCookingRecipe.Serializer(FryingRecipe::new));
 		}
 
 		private static <S extends RecipeSerializer<T>, T extends Recipe<?>> S register(String fileName, S serializer) {
@@ -240,12 +243,37 @@ public class CookingMod implements ModInitializer {
 		}
 	}
 
+//	public static class ScreenHandlers {
+//		public static ScreenHandlerType<StoveCookingScreenHandler> STOVE_COOKING;
+//		public static ScreenHandlerType<MilkBarrelCookingScreenHandler> MILK_BARREL_COOKING;
+//		public static ScreenHandlerType<GrillingScreenHandler> GRILLING;
+//		public static ScreenHandlerType<BakingScreenHandler> BAKING;
+//		public static ScreenHandlerType<ToastingScreenHandler> TOASTING;
+//		public static ScreenHandlerType<MillingScreenHandler> MILLING;
+//		public static ScreenHandlerType<FryingScreenHandler> FRYING;
+//
+//		private static void registerAll() {
+//			STOVE_COOKING = register("stove_cooking", StoveCookingScreenHandler::new);
+//			MILK_BARREL_COOKING = register("milk_barrel_cooking", MilkBarrelCookingScreenHandler::new);
+//			GRILLING = register("grilling", GrillingScreenHandler::new);
+//			BAKING = register("baking", BakingScreenHandler::new);
+//			TOASTING = register("toasting", ToastingScreenHandler::new);
+//			MILLING = register("milling", MillingScreenHandler::new);
+//			FRYING = register("frying", FryingScreenHandler::new);
+//		}
+//
+//		private static <T extends AbstractCookingScreenHandler> ScreenHandlerType<T> register(String fileName, ScreenHandlerRegistry.SimpleClientHandlerFactory<T> factory) {
+//			return ScreenHandlerRegistry.registerSimple(new Identifier(NAMESPACE, fileName), factory);
+//		}
+//	}
+
 	@Override
 	public void onInitialize() {
 		Blocks.registerAll();
 		Items.registerAll();
 		RecipeTypes.registerAll();
 		RecipeSerializers.registerAll();
+//		ScreenHandlers.registerAll();
 	}
 
 }
