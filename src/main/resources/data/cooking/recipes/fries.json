@@ -1,0 +1,15 @@
+{
+  "type": "cooking:frying",
+  "pattern": [
+    "P"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:potato"
+    }
+  },
+  "result": {
+    "item": "cooking:fries",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cooking:fried_fish"
+    },
+    {
+      "item": "cooking:fries"
+    },
+    {
+      "item": "cooking:fries"
+    }
+  ],
+  "result": {
+    "item": "cooking:fish_and_chips",
+    "count": 2
+  }
+}

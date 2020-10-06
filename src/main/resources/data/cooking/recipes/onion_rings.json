@@ -1,0 +1,22 @@
+{
+  "type": "cooking:frying",
+  "pattern": [
+    "BF",
+    "OO"
+  ],
+  "key": {
+    "O": {
+      "item": "cooking:onion"
+    },
+    "B": {
+      "item": "cooking:butter"
+    },
+    "F": {
+      "item": "cooking:flour"
+    }
+  },
+  "result": {
+    "item": "cooking:onion_rings",
+    "count": 1
+  }
+}

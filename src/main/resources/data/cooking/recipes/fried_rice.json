@@ -1,0 +1,29 @@
+{
+  "type": "cooking:stove_cooking",
+  "pattern": [
+    "ABC",
+    "RRR",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:bowl"
+    },
+    "R": {
+      "item": "cooking:cooked_rice"
+    },
+    "A": {
+      "item": "minecraft:carrot"
+    },
+    "B": {
+      "item": "minecraft:cooked_chicken"
+    },
+    "C": {
+      "item": "minecraft:egg"
+    }
+  },
+  "result": {
+    "item": "cooking:fried_rice",
+    "count": 1
+  }
+}

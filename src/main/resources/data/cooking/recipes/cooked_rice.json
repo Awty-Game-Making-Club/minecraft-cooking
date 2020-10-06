@@ -1,0 +1,19 @@
+{
+  "type": "cooking:stove_cooking",
+  "pattern": [
+    "RRR",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "R": {
+      "item": "cooking:rice"
+    }
+  },
+  "result": {
+    "item": "cooking:cooked_rice",
+    "count": 3
+  }
+}

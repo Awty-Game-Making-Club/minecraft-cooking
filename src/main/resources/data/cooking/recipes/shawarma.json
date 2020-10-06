@@ -1,0 +1,26 @@
+{
+  "type": "cooking:stove_cooking",
+  "pattern": [
+    " T ",
+    "MBO",
+    " T "
+  ],
+  "key": {
+    "T": {
+      "item": "cooking:tortilla"
+    },
+    "B": {
+      "item": "minecraft:beef"
+    },
+    "O": {
+      "item": "cooking:onion"
+    },
+    "M": {
+      "item": "cooking:tomato"
+    }
+  },
+  "result": {
+    "item": "cooking:shawarma",
+    "count": 3
+  }
+}

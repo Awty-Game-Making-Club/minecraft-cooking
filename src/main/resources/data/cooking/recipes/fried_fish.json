@@ -1,0 +1,22 @@
+{
+  "type": "cooking:frying",
+  "pattern": [
+    "FF",
+    "CB"
+  ],
+  "key": {
+    "F": {
+      "item": "cooking:flour"
+    },
+    "B": {
+      "item": "cooking:butter"
+    },
+    "C": {
+      "tag": "minecraft:fishes"
+    }
+  },
+  "result": {
+    "item": "cooking:fried_fish",
+    "count": 1
+  }
+}

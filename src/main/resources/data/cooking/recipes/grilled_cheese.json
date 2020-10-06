@@ -1,0 +1,20 @@
+{
+  "type": "cooking:grilling",
+  "pattern": [
+    "T",
+    "C",
+    "T"
+  ],
+  "key": {
+    "T": {
+      "item": "cooking:toast"
+    },
+    "C": {
+      "item": "cooking:cheese"
+    }
+  },
+  "result": {
+    "item": "cooking:grilled_cheese",
+    "count": 1
+  }
+}
