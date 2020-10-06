@@ -1,0 +1,23 @@
+{
+  "type": "cooking:baking",
+  "pattern": [
+    "CCC",
+    "TTT",
+    "OOO"
+  ],
+  "key": {
+    "O": {
+      "item": "cooking:tortilla"
+    },
+    "C": {
+      "item": "cooking:cheese"
+    },
+    "T": {
+      "item": "cooking:tomato"
+    }
+  },
+  "result": {
+    "item": "cooking:pizza",
+    "count": 1
+  }
+}

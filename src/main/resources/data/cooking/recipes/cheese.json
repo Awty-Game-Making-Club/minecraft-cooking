@@ -1,0 +1,15 @@
+{
+  "type": "cooking:milk_barrel_cooking",
+  "pattern": [
+    "B"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:milk_bucket"
+    }
+  },
+  "result": {
+    "item": "cooking:cheese",
+    "count": 2
+  }
+}

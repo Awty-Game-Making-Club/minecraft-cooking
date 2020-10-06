@@ -1,0 +1,19 @@
+{
+  "type": "cooking:milk_barrel_cooking",
+  "pattern": [
+    "W",
+    "M"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "cooking:butter",
+    "count": 4
+  }
+}

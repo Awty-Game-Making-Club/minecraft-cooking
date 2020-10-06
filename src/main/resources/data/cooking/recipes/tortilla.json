@@ -1,0 +1,19 @@
+{
+  "type": "cooking:stove_cooking",
+  "pattern": [
+    "FFF",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "F": {
+      "item": "cooking:flour"
+    }
+  },
+  "result": {
+    "item": "cooking:tortilla",
+    "count": 2
+  }
+}

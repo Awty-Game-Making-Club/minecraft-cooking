@@ -1,0 +1,23 @@
+{
+  "type": "cooking:grilling",
+  "pattern": [
+    "T ",
+    "BC",
+    "T "
+  ],
+  "key": {
+    "T": {
+      "item": "cooking:toast"
+    },
+    "B": {
+      "item": "minecraft:beef"
+    },
+    "C": {
+      "item": "cooking:cheese"
+    }
+  },
+  "result": {
+    "item": "cooking:cheeseburger",
+    "count": 1
+  }
+}

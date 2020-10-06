@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "T",
+    "C",
+    "T"
+  ],
+  "key": {
+    "T": {
+      "item": "cooking:toast"
+    },
+    "C": {
+      "item": "cooking:fried_chicken"
+    }
+  },
+  "result": {
+    "item": "cooking:chicken_sandwich",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "cooking:stove_cooking",
+  "pattern": [
+    " T ",
+    "BCB",
+    " T "
+  ],
+  "key": {
+    "T": {
+      "item": "cooking:tortilla"
+    },
+    "C": {
+      "item": "cooking:cheese"
+    },
+    "B": {
+      "item": "cooking:bean"
+    }
+  },
+  "result": {
+    "item": "cooking:quesadilla",
+    "count": 1
+  }
+}

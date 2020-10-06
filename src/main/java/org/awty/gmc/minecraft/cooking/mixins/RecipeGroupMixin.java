@@ -12,11 +12,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ClientRecipeBook.class)
 public class RecipeGroupMixin {
-//    @Inject(method = "getGroupForRecipe", at = @At("RETURN"), cancellable = true)
-//    private static void customRecipeGroupFixer(Recipe<?> recipe, CallbackInfoReturnable<RecipeBookGroup> callbackInfo) {
-//        if(callbackInfo.getReturnValue() == RecipeBookGroup.UNKNOWN) {
-//            LogManager.getLogger().log(Level.INFO, "Unknown recipe category Mixin fix activated!");
-//            callbackInfo.setReturnValue(RecipeBookGroup.CRAFTING_MISC);
-//        }
-//    }
+    @Inject(method = "getGroupForRecipe", at = @At("RETURN"), cancellable = true)
+    private static void customRecipeGroupFixer(Recipe<?> recipe, CallbackInfoReturnable<RecipeBookGroup> callbackInfo) {
+        if(callbackInfo.getReturnValue() == RecipeBookGroup.UNKNOWN) {
+            LogManager.getLogger().log(Level.INFO, "Unknown recipe category Mixin fix activated!");
+            callbackInfo.setReturnValue(RecipeBookGroup.CRAFTING_MISC);
+        }
+    }
 }

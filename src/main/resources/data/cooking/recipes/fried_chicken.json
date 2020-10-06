@@ -1,0 +1,22 @@
+{
+  "type": "cooking:frying",
+  "pattern": [
+    "FF",
+    "CB"
+  ],
+  "key": {
+    "F": {
+      "item": "cooking:flour"
+    },
+    "B": {
+      "item": "cooking:butter"
+    },
+    "C": {
+      "item": "minecraft:chicken"
+    }
+  },
+  "result": {
+    "item": "cooking:fried_chicken",
+    "count": 1
+  }
+}
