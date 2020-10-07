@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cooking:tomato"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cooking:rice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cooking:onion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cooking:bean"
+        }
+      ]
+    }
+  ]
+}
