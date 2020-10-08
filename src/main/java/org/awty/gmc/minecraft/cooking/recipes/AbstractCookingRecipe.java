@@ -29,7 +29,7 @@ public abstract class AbstractCookingRecipe extends ShapedRecipe {
         public AbstractCookingRecipe read(Identifier identifier, JsonObject jsonObject) {
             ShapedRecipe shapedRecipe = super.read(identifier, jsonObject);
             return recipeConstructor.apply(shapedRecipe.getId(),
-                    shapedRecipe.getGroup(),
+                    shapedRecipe.group,
                     shapedRecipe.getWidth(),
                     shapedRecipe.getHeight(),
                     shapedRecipe.getPreviewInputs(),
@@ -40,7 +40,7 @@ public abstract class AbstractCookingRecipe extends ShapedRecipe {
         public AbstractCookingRecipe read(Identifier identifier, PacketByteBuf packetByteBuf) {
             ShapedRecipe shapedRecipe = super.read(identifier, packetByteBuf);
             return recipeConstructor.apply(shapedRecipe.getId(),
-                    shapedRecipe.getGroup(),
+                    shapedRecipe.group,
                     shapedRecipe.getWidth(),
                     shapedRecipe.getHeight(),
                     shapedRecipe.getPreviewInputs(),
