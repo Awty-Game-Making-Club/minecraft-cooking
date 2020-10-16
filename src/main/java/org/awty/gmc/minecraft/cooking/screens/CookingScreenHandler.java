@@ -22,6 +22,7 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 import org.awty.gmc.minecraft.cooking.recipes.AbstractCookingRecipe;
+import org.awty.gmc.minecraft.cooking.recipes.CookingResultSlot;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -49,7 +50,7 @@ public class CookingScreenHandler extends AbstractRecipeScreenHandler<Inventory>
         this.context = context;
         this.player = playerInventory.player;
 
-        this.addSlot(new CraftingResultSlot(playerInventory.player, this.input, this.result, 0, 124, 35));
+        this.addSlot(new CookingResultSlot(playerInventory.player, this.input, this.result, 0, 124, 35, recipeType));
 
         int m;
         int l;
