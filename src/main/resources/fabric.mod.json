@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cooking",
-  "version": "0.0.4-beta",
+  "version": "0.0.5-beta",
 
   "name": "Advanced Cooking",
   "description": "An advanced cooking mod.",

@@ -7,6 +7,6 @@
     "east": "cooking:block/oven_side",
     "west": "cooking:block/oven_side",
     "up": "cooking:block/oven_top",
-    "down": "minecraft:block/iron_block"
+    "down": "cooking:block/oven_bottom"
   }
 }

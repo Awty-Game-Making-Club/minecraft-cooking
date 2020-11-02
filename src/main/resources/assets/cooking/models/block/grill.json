@@ -7,6 +7,6 @@
     "east": "cooking:block/grill_side",
     "west": "cooking:block/grill_side",
     "up": "cooking:block/grill_top",
-    "down": "minecraft:block/iron_block"
+    "down": "cooking:block/grill_bottom"
   }
 }
