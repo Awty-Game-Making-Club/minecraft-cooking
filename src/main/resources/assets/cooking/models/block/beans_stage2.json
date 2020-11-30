@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "minecraft:block/beans_stage2"
+    "crop": "cooking:block/beans_stage2"
   }
 }
