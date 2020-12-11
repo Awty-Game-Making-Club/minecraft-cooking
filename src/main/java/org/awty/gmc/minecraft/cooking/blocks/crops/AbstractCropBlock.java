@@ -7,8 +7,10 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 
 public abstract class AbstractCropBlock extends net.minecraft.block.CropBlock {
 
@@ -35,8 +37,18 @@ public abstract class AbstractCropBlock extends net.minecraft.block.CropBlock {
     }
 
     @Override
+    protected int getGrowthAmount(World world) {
+        return MathHelper.nextInt(world.random, 1, 3);
+    }
+
+    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(AGE);
+    }
+
+    @Override
+    public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
+        return true;
     }
 
     @Override
